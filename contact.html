@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Havenwood Concierge - Schedule private flagship showroom appointments, request custom architectural dimensions, or inquire about VIP international delivery.">
+  <title>Contact & Private Showroom | Havenwood Furniture</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader">
+    <div class="preloader-logo">
+      <div class="brand-diamond" style="width:48px; height:48px;">
+        <div class="brand-diamond-inner" style="width:24px; height:24px;"></div>
+      </div>
+      <span style="font-family:var(--font-serif); font-size: 2rem; color:#FFFFFF;">HAVEN<span style="color:#C89B3C;">WOOD</span></span>
+    </div>
+    <div class="preloader-progress">
+      <div class="preloader-bar"></div>
+    </div>
+    <div class="preloader-text">Connecting to VIP Concierge...</div>
+  </div>
+
+  <div id="scroll-progress"></div>
+  <div class="mouse-glow"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-diamond">
+          <div class="brand-diamond-inner"></div>
+        </div>
+        <span class="brand-logo-text"><span class="brand-haven">HAVEN</span><span class="brand-wood">WOOD</span></span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Quote</a>
+
+        <button class="mobile-toggle" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="products.html">Luxury Collection</a></li>
+      <li><a href="gallery.html">Interior Gallery</a></li>
+      <li><a href="testimonials.html">VIP Reviews</a></li>
+      <li><a href="contact.html">Contact & Showroom</a></li>
+    </ul>
+    <div style="margin-top: auto;">
+      <a href="contact.html" class="btn btn-primary" style="width:100%;">
+        Request VIP Quote
+      </a>
+    </div>
+  </aside>
+
+  <!-- Hero Section Dedicated for Contact Page -->
+  <section class="hero-section" style="min-height: 60vh; padding: 10rem 0 5rem;">
+    <div class="hero-bg-media">
+      <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=1920&q=80" alt="Havenwood Flagship Showroom Desk">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-container" style="grid-template-columns: 1fr;">
+      <div class="hero-content text-center" style="max-width: 850px; margin: 0 auto;">
+        <div class="hero-tag">Private Appointments</div>
+        <h1 class="hero-title" style="font-size: clamp(3rem, 5.5vw, 5rem);">
+          Concierge & <span>Showroom</span>
+        </h1>
+        <p class="hero-subtitle" style="margin: 0 auto 2rem; max-width: 720px;">
+          Connect with our dedicated interior architects to request bespoke timber dimensions, leather swatches, or schedule a private viewing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Contact Section (Grid & Form) -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Left: Contact Details -->
+        <div class="reveal-left">
+          <div class="section-tag">Direct Lines</div>
+          <h2 class="section-title">Schedule Your VIP Consultation</h2>
+          <p class="section-subtitle" style="margin-bottom: 2rem;">
+            Whether you require a single statement armchair or full penthouse furniture curation, our design team provides personal white-glove service.
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            <!-- Info Card 1 -->
+            <div style="display:flex; gap:1.25rem; align-items:flex-start; background:#FFFFFF; padding:1.25rem; border-radius:var(--radius-md); border:1px solid rgba(90,62,43,0.08);">
+              <div style="background:var(--color-primary-dark); color:var(--color-accent); width:48px; height:48px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <h4 style="font-family:var(--font-serif); font-size:1.1rem; color:var(--color-primary-dark); margin-bottom:0.25rem;">Flagship Atelier & Showroom</h4>
+                <p style="font-size:0.875rem; color:rgba(90,62,43,0.8); line-height:1.5;">Main Boulevard, Block 4, Clifton, Karachi, Pakistan</p>
+              </div>
+            </div>
+
+            <!-- Info Card 2 -->
+            <div style="display:flex; gap:1.25rem; align-items:flex-start; background:#FFFFFF; padding:1.25rem; border-radius:var(--radius-md); border:1px solid rgba(90,62,43,0.08);">
+              <div style="background:var(--color-primary-dark); color:var(--color-accent); width:48px; height:48px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <h4 style="font-family:var(--font-serif); font-size:1.1rem; color:var(--color-primary-dark); margin-bottom:0.25rem;">VIP Concierge Phone & WhatsApp</h4>
+                <p style="font-size:0.875rem; color:rgba(90,62,43,0.8); line-height:1.5;">+92 300 1234567 / Dedicated 24/7 VIP Line</p>
+              </div>
+            </div>
+
+            <!-- Info Card 3 -->
+            <div style="display:flex; gap:1.25rem; align-items:flex-start; background:#FFFFFF; padding:1.25rem; border-radius:var(--radius-md); border:1px solid rgba(90,62,43,0.08);">
+              <div style="background:var(--color-primary-dark); color:var(--color-accent); width:48px; height:48px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <h4 style="font-family:var(--font-serif); font-size:1.1rem; color:var(--color-primary-dark); margin-bottom:0.25rem;">Architectural Inquiries Email</h4>
+                <p style="font-size:0.875rem; color:rgba(90,62,43,0.8); line-height:1.5;">concierge@havenwoodfurniture.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="reveal-right">
+          <form id="contact-form" class="glass-card" style="padding: 2.5rem;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">Request Private Quotation</h3>
+            <p style="font-size: 0.875rem; color: rgba(90,62,43,0.8); margin-bottom: 2rem;">Fill in your details below. Our VIP design director will contact you within 2 hours.</p>
+
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" name="name" class="form-control" placeholder="e.g. Lord Sterling" required>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" name="email" class="form-control" placeholder="vip@residence.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone / WhatsApp</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+92 300 1234567">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Inquiry Type</label>
+              <select class="form-control" style="appearance:auto;">
+                <option>Custom Architectural Quotation</option>
+                <option>Showroom Private Appointment</option>
+                <option>Trade & Designer Partnership</option>
+                <option>Leather & Wood Material Samples</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Project Details & Custom Requirements</label>
+              <textarea name="message" class="form-control" rows="4" placeholder="Mention room dimensions, preferred wood species, or custom leather finishes..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Submit VIP Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showroom Google Map Section (Exact embed tag preserved) -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom: 2rem;">
+        <div class="section-tag">Interactive Navigation</div>
+        <h2 class="section-title">Visit Our Flagship Location</h2>
+      </div>
+
+      <div class="reveal" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); border: 2px solid rgba(200,155,60,0.3);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115860.7713437257!2d67.01442129726563!3d24.841673000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e70a3667237%3A0xe72bad35f791e3e0!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="section" style="background: rgba(232,226,218,0.3);">
+    <div class="container" style="max-width: 900px;">
+      <div class="text-center reveal">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-title">Everything You Need to Know</h2>
+      </div>
+
+      <div class="faq-accordion reveal" style="margin-top: 3rem;">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer bespoke custom dimensions for penthouses and yachts?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Yes. Every piece in our collection can be customized down to the millimeter. Our in-house CAD architects produce 3D renders prior to wood sculpting to ensure flawless integration.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does global white-glove delivery and assembly work?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Our white-glove logistics team handles custom crating, air freight, customs clearance, and in-residence unboxing. Two Havenwood technicians install and place the furniture in your preferred room before removing all packaging.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What guarantees are provided under your 25-Year Structural Warranty?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            We guarantee against frame splitting, joinery loosening, timber warping, and structural hardware failures under normal residential usage for 25 full years.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I request physical leather and wood timber samples prior to ordering?</span>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Absolutely. Contact our concierge to receive a complimentary Havenwood Sample Presentation Box featuring cut samples of Grade-A Teak, American Walnut, Italian full-grain leathers, and bouclé fabrics.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Wave Divider -->
+  <svg class="footer-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,58.7C1200,64,1320,64,1380,64L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path>
+  </svg>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom:1rem;">
+            <div class="brand-diamond">
+              <div class="brand-diamond-inner"></div>
+            </div>
+            <span class="brand-logo-text"><span class="brand-haven" style="color:#FFFFFF;">HAVEN</span><span class="brand-wood">WOOD</span></span>
+          </a>
+          <p>
+            Bespoke luxury furniture engineered from 100% sustainable teak and Tuscan leathers for visionary interiors across the globe.
+          </p>
+
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61576206277160" target="_blank" rel="noopener noreferrer" class="social-btn" title="Facebook">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-btn" title="Instagram">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" class="social-btn" title="WhatsApp">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-0.981z"/></svg>
+            </a>
+            <a href="#" class="social-btn" title="LinkedIn">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="#" class="social-btn" title="Pinterest">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="social-btn" title="TikTok">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.57-1.31 1.56-1.31 2.56 0 .77.29 1.52.81 2.09.68.75 1.72 1.13 2.71 1.03.94-.07 1.83-.56 2.38-1.34.42-.61.64-1.37.64-2.12-.01-4.71-.01-9.42-.01-14.13z"/></svg>
+            </a>
+            <a href="#" class="social-btn" title="YouTube">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" class="social-btn" title="Twitter (X)">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Our Heritage</a></li>
+            <li><a href="products.html">Luxury Products</a></li>
+            <li><a href="gallery.html">Interior Gallery</a></li>
+            <li><a href="testimonials.html">Client Reviews</a></li>
+            <li><a href="contact.html">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product Lines</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Teak Lounge Chairs</a></li>
+            <li><a href="products.html">Marble Dining Tables</a></li>
+            <li><a href="products.html">Italian Leather Sofas</a></li>
+            <li><a href="products.html">Master Bed Frames</a></li>
+            <li><a href="products.html">Executive Desks</a></li>
+            <li><a href="products.html">Outdoor Loungers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Private Catalogue</h4>
+          <p style="font-size: 0.88rem; color: rgba(248,245,242,0.7); margin-bottom: 1rem;">
+            Subscribe to receive our annual physical architectural hardbound lookbook and private releases.
+          </p>
+          <form id="newsletter-form" class="newsletter-box">
+            <input type="email" placeholder="Your VIP Email..." required>
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Havenwood Luxury Furniture. All Rights Reserved.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="privacy.html" style="color:inherit;">Privacy Policy</a>
+          <a href="terms.html" style="color:inherit;">Terms of Craftsmanship</a>
+          <a href="terms.html" style="color:inherit;">25-Year Warranty</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Action Button -->
+  <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" class="fab-whatsapp" title="Chat with Concierge on WhatsApp">
+    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338-11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-0.981z"/>
+    </svg>
+  </a>
+
+  <!-- Back To Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/script.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

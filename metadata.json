@@ -1,0 +1,6 @@
+{
+  "name": "Havenwood Luxury Furniture",
+  "description": "100% professional, modern, luxury premium furniture website featuring glassmorphism, 3D card tilt effects, parallax scrolling, quick view modals, interactive gallery, Google Maps embed, and responsive design.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
