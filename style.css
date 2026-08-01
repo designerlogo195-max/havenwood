@@ -373,6 +373,7 @@ button, input, textarea, select {
   z-index: 9998;
   width: 0%;
   transition: width 0.1s ease-out;
+  pointer-events: none;
 }
 
 /* ==========================================================================
@@ -502,54 +503,106 @@ button, input, textarea, select {
 
 .mobile-toggle {
   display: none;
-  background: none;
+  background: transparent;
   border: none;
   font-size: 1.5rem;
   color: var(--color-primary-dark);
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1005;
+  padding: 0.5rem;
+  position: relative;
+  pointer-events: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
 }
 
 .site-header.scrolled .mobile-toggle {
-  color: #FFFFFF;
+  color: var(--color-primary-dark);
+}
+
+.mobile-toggle:hover {
+  color: var(--color-accent);
+}
+
+.mobile-toggle svg {
+  display: block;
+  pointer-events: none;
 }
 
 /* Mobile Nav Drawer */
 .mobile-nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  z-index: 999;
+  background: rgba(18, 12, 8, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9990;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-normal);
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-nav-overlay.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
-  width: 300px;
-  height: 100%;
+  right: -340px;
+  width: 320px;
+  max-width: 85vw;
+  height: 100vh;
+  height: 100dvh;
   background: var(--color-primary-dark);
-  z-index: 1000;
+  z-index: 9999;
   padding: 5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  transition: right var(--transition-normal);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-  border-left: 1px solid rgba(200, 155, 60, 0.2);
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+  border-left: 1px solid rgba(200, 155, 60, 0.25);
+  overflow-y: auto;
 }
 
 .mobile-nav-drawer.active {
   right: 0;
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(200, 155, 60, 0.12);
+  border: 1px solid rgba(200, 155, 60, 0.3);
+  color: var(--color-accent);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.mobile-nav-close:hover {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  transform: rotate(90deg);
+}
+
+body.mobile-nav-open {
+  overflow: hidden !important;
 }
 
 .mobile-nav-links {
@@ -995,19 +1048,43 @@ button, input, textarea, select {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 .product-card {
   background: var(--color-secondary);
-  overflow: hidden;
   border: 1px solid rgba(90, 62, 43, 0.08);
+  border-radius: var(--radius-sm);
   box-shadow: 0 10px 30px -10px rgba(45, 27, 15, 0.04);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  overflow: hidden;
 }
 
 .product-card:hover {
@@ -1016,22 +1093,43 @@ button, input, textarea, select {
   border-color: var(--color-accent);
 }
 
-.product-thumb {
+.product-img-box, .product-thumb {
   position: relative;
-  height: 280px;
+  width: 100%;
+  height: 260px;
   overflow: hidden;
   background: #EBE5DF;
+  flex-shrink: 0;
 }
 
-.product-thumb img {
+.product-img-box img, .product-img, .product-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.product-card:hover .product-img-box img,
 .product-card:hover .product-thumb img {
   transform: scale(1.08);
+}
+
+.product-img-box::after, .product-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 18, 11, 0.35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.product-card:hover .product-img-box::after,
+.product-card:hover .product-thumb::after {
+  opacity: 1;
 }
 
 .product-badge {
@@ -1047,49 +1145,93 @@ button, input, textarea, select {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border: 1px solid var(--color-accent);
-  z-index: 2;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.product-actions-overlay {
+.product-actions, .product-actions-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(26, 18, 11, 0.4);
-  backdrop-filter: blur(4px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
+  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 3;
+  width: auto;
+  background: transparent;
+  backdrop-filter: none;
+  inset: auto;
 }
 
-.product-card:hover .product-actions-overlay {
+.product-card:hover .product-actions,
+.product-card:hover .product-actions-overlay,
+.product-img-box:hover .product-actions,
+.product-thumb:hover .product-actions {
   opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
 }
 
-.product-details {
+.btn-quick-view {
+  background: var(--color-primary-dark);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.7rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-quick-view:hover {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  box-shadow: 0 12px 30px rgba(200, 155, 60, 0.5);
+  transform: scale(1.05);
+}
+
+.product-info, .product-details {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1 1 auto;
+  background: var(--color-secondary);
 }
 
 .product-category {
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.25em;
   color: var(--color-accent);
   font-weight: 700;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
 }
 
-.product-title {
+.product-name, .product-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-style: italic;
+  font-weight: 600;
   color: var(--color-primary-dark);
   margin-bottom: 0.5rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3.1rem;
 }
 
 .product-rating {
@@ -1098,12 +1240,15 @@ button, input, textarea, select {
   gap: 0.25rem;
   color: var(--color-accent);
   font-size: 0.85rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  min-height: 1.25rem;
+  line-height: 1;
 }
 
 .product-rating span {
   color: var(--color-text-muted);
   margin-left: 0.35rem;
+  font-size: 0.8rem;
 }
 
 .product-footer {
@@ -1113,13 +1258,20 @@ button, input, textarea, select {
   margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid rgba(90, 62, 43, 0.1);
+  gap: 0.75rem;
 }
 
 .product-price {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-primary-dark);
+  white-space: nowrap;
+}
+
+.product-footer .btn {
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 /* Quick View Modal */
