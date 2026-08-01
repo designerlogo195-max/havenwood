@@ -299,13 +299,14 @@ button, input, textarea, select {
   justify-content: center;
   color: var(--color-secondary);
   transition: opacity 0.6s ease, visibility 0.6s ease;
-  animation: hidePreloaderFallback 0.1s 2s forwards;
+  animation: hidePreloaderFallback 0.1s 1.2s forwards;
 }
 
 #preloader.loaded {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
+  display: none !important;
 }
 
 @keyframes hidePreloaderFallback {
@@ -313,6 +314,7 @@ button, input, textarea, select {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    display: none;
   }
 }
 
@@ -1842,29 +1844,41 @@ textarea.form-control {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: autoRevealFallback 0.1s 0.5s forwards;
 }
 
 .reveal-left {
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: autoRevealFallback 0.1s 0.5s forwards;
 }
 
 .reveal-right {
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: autoRevealFallback 0.1s 0.5s forwards;
 }
 
 .reveal-scale {
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: autoRevealFallback 0.1s 0.5s forwards;
+}
+
+@keyframes autoRevealFallback {
+  to {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
 }
 
 .reveal.active, .reveal-left.active, .reveal-right.active, .reveal-scale.active {
-  opacity: 1;
-  transform: translate(0) scale(1);
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+  animation: none !important;
 }
 
 /* ==========================================================================
