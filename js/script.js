@@ -24,6 +24,7 @@
     initBackToTop();
     initRippleEffect();
     initFAQAccordion();
+    initImageFallback();
   });
 
   /* ==========================================================================
@@ -258,10 +259,20 @@ function initCounters() {
 }
 
 /* ==========================================================================
-   8. Scroll Reveal Observer
+   8. Scroll Reveal Observer & Fail-safe
    ========================================================================== */
 function initScrollReveal() {
   const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if (!reveals.length) return;
+
+  function revealAll() {
+    reveals.forEach(el => el.classList.add('active'));
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    revealAll();
+    return;
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -269,9 +280,23 @@ function initScrollReveal() {
         entry.target.classList.add('active');
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.05 });
 
   reveals.forEach(el => observer.observe(el));
+
+  // Fail-safe: ensure elements in viewport or after delay are always visible
+  setTimeout(revealAll, 800);
+}
+
+/* Fallback for image loading errors */
+function initImageFallback() {
+  const placeholderSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%232D1B0F'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='28' fill='%23C89B3C'%3EHAVENWOOD LUXURY%3C/text%3E%3C/svg%3E";
+  
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+      this.src = placeholderSvg;
+    });
+  });
 }
 
 /* ==========================================================================
