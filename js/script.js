@@ -7,47 +7,65 @@
    */
 
   document.addEventListener('DOMContentLoaded', () => {
-  initPreloader();
-  initScrollProgress();
-  initHeader();
-  initTypingEffect();
-  init3DTilt();
-  initMouseGlow();
-  initCounters();
-  initScrollReveal();
-  initProductFilter();
-  initQuickViewModal();
-  initGalleryLightbox();
-  initTestimonialsSlider();
-  initContactForm();
-  initNewsletterForm();
-  initBackToTop();
-  initRippleEffect();
-  initFAQAccordion();
-});
+    initPreloader();
+    initScrollProgress();
+    initHeader();
+    initTypingEffect();
+    init3DTilt();
+    initMouseGlow();
+    initCounters();
+    initScrollReveal();
+    initProductFilter();
+    initQuickViewModal();
+    initGalleryLightbox();
+    initTestimonialsSlider();
+    initContactForm();
+    initNewsletterForm();
+    initBackToTop();
+    initRippleEffect();
+    initFAQAccordion();
+  });
 
-/* ==========================================================================
-   1. Preloader Loading Sequence
-   ========================================================================== */
-function initPreloader() {
-  const preloader = document.getElementById('preloader');
-  const bar = document.querySelector('.preloader-bar');
-  if (!preloader || !bar) return;
+  /* ==========================================================================
+     1. Preloader Loading Sequence & Fail-safe
+     ========================================================================== */
+  function initPreloader() {
+    const preloader = document.getElementById('preloader');
+    const bar = document.querySelector('.preloader-bar');
+    if (!preloader) return;
 
-  let progress = 0;
-  const interval = setInterval(() => {
-    progress += Math.floor(Math.random() * 25) + 10;
-    if (progress > 100) progress = 100;
-    bar.style.width = `${progress}%`;
+    let isFinished = false;
 
-    if (progress === 100) {
-      clearInterval(interval);
+    function finishLoading() {
+      if (isFinished) return;
+      isFinished = true;
+      if (bar) bar.style.width = '100%';
+      preloader.classList.add('loaded');
       setTimeout(() => {
-        preloader.classList.add('loaded');
-      }, 400);
+        preloader.style.display = 'none';
+      }, 500);
     }
-  }, 100);
-}
+
+    // Unconditional fail-safe timeout after 1.2s
+    const failSafeTimer = setTimeout(finishLoading, 1200);
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 30) + 20;
+      if (progress > 100) progress = 100;
+      if (bar) bar.style.width = `${progress}%`;
+
+      if (progress === 100) {
+        clearInterval(interval);
+        clearTimeout(failSafeTimer);
+        setTimeout(finishLoading, 150);
+      }
+    }, 50);
+
+    window.addEventListener('load', () => {
+      setTimeout(finishLoading, 150);
+    });
+  }
 
 /* ==========================================================================
    2. Scroll Progress Bar

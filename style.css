@@ -299,11 +299,21 @@ button, input, textarea, select {
   justify-content: center;
   color: var(--color-secondary);
   transition: opacity 0.6s ease, visibility 0.6s ease;
+  animation: hidePreloaderFallback 0.1s 2s forwards;
 }
 
 #preloader.loaded {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+@keyframes hidePreloaderFallback {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 .preloader-logo {
@@ -319,7 +329,7 @@ button, input, textarea, select {
   animation: pulseGlow 2s infinite ease-in-out;
 }
 
-.preloader-bar-container {
+.preloader-progress, .preloader-bar-container {
   width: 240px;
   height: 4px;
   background: rgba(255, 255, 255, 0.1);
