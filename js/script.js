@@ -118,14 +118,17 @@ function initHeader() {
   });
 
   function highlightActiveNav() {
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    let currentPath = window.location.pathname.split('/').filter(Boolean).pop() || 'index.html';
+    if (currentPath && !currentPath.endsWith('.html')) {
+      currentPath += '.html';
+    }
     const allLinks = document.querySelectorAll('.nav-link');
     
     allLinks.forEach(link => {
       const href = link.getAttribute('href');
       if (href === currentPath || (currentPath === '' && href === 'index.html')) {
         link.classList.add('active');
-      } else {
+      } else if (href && href !== '#') {
         link.classList.remove('active');
       }
     });
@@ -147,22 +150,24 @@ function initTypingEffect() {
     'Custom Penthouse & Executive Interiors'
   ];
 
+  typingElement.textContent = phrases[0];
+
   let phraseIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typeSpeed = 90;
+  let charIndex = phrases[0].length;
+  let isDeleting = true;
+  let typeSpeed = 2200;
 
   function type() {
     const currentPhrase = phrases[phraseIndex];
 
     if (isDeleting) {
-      typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
-      charIndex--;
-      typeSpeed = 40;
+      charIndex = Math.max(0, charIndex - 1);
+      typingElement.textContent = currentPhrase.substring(0, charIndex);
+      typeSpeed = 35;
     } else {
-      typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
-      charIndex++;
-      typeSpeed = 90;
+      charIndex = Math.min(currentPhrase.length, charIndex + 1);
+      typingElement.textContent = currentPhrase.substring(0, charIndex);
+      typeSpeed = 80;
     }
 
     if (!isDeleting && charIndex === currentPhrase.length) {
@@ -171,13 +176,13 @@ function initTypingEffect() {
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % phrases.length;
-      typeSpeed = 400;
+      typeSpeed = 350;
     }
 
     setTimeout(type, typeSpeed);
   }
 
-  type();
+  setTimeout(type, 2000);
 }
 
 /* ==========================================================================
