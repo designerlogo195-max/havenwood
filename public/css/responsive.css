@@ -1,0 +1,216 @@
+/* ==========================================================================
+   Havenwood Luxury Furniture - Responsive Breakpoint System
+   Breakpoints: 320px, 375px, 425px, 768px, 1024px, 1280px, 1440px, 1920px
+   ========================================================================== */
+
+/* 1. Base Ultra-Wide Screens (1440px - 1920px+) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1380px;
+  }
+  .hero-title {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+  body {
+    font-size: 18px;
+  }
+}
+
+/* 2. Laptops & Desktops (1024px - 1280px) */
+@media (max-width: 1280px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .site-header {
+    padding: 1rem 0;
+  }
+  .nav-menu {
+    gap: 1.5rem;
+  }
+  .nav-link {
+    font-size: 10px;
+  }
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .typing-container {
+    justify-content: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-3d-wrapper {
+    max-width: 540px;
+    margin: 2rem auto 0;
+  }
+  .counter-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .counter-item {
+    border-right: none;
+    border-bottom: 1px solid #F8F5F2;
+    padding-bottom: 1.5rem;
+  }
+  .counter-item:nth-child(2) {
+    border-right: none;
+  }
+  .counter-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .about-grid, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3. Tablets (768px - 1024px) */
+@media (max-width: 768px) {
+  .nav-menu, .header-actions .btn {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .hero-title {
+    font-size: 2.85rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .floating-badge {
+    display: none;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-masonry {
+    grid-template-columns: 1fr;
+  }
+  .timeline-container::after {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px !important;
+    padding-right: 0 !important;
+  }
+  .timeline-item::after {
+    left: 10px !important;
+  }
+  .timeline-item.left, .timeline-item.right {
+    left: 0;
+  }
+  .counter-bar {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .counter-item {
+    text-align: center;
+    border-right: none;
+    padding-right: 0;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .modal-content {
+    grid-template-columns: 1fr;
+  }
+  .modal-body {
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 4. Small Mobile Screens (320px - 425px) */
+@media (max-width: 425px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    padding: 0 1.25rem;
+  }
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  .hero-tag {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .filter-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 9px;
+  }
+  .review-google-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .brand-logo-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .section-title {
+    font-size: 1.85rem;
+  }
+}
