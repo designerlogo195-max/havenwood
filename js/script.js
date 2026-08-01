@@ -1,9 +1,12 @@
-/**
- * Havenwood Luxury Furniture - Master Interactive Script
- * Vanilla JavaScript (ES6+)
- */
+(function () {
+  'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
+  /**
+   * Havenwood Luxury Furniture - Master Interactive Script
+   * Vanilla JavaScript (ES6+)
+   */
+
+  document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initScrollProgress();
   initHeader();
@@ -626,3 +629,4 @@ function initRippleEffect() {
     });
   });
 }
+})();
